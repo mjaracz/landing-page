@@ -20,7 +20,7 @@ class App extends Component {
           <div className="container">
             <Header/>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route path="/turing-rec" component={HomePage} />
               <Route path="/NaturalPage" component={NaturalPage} />
               <Route path="/RegionalPage" component={RegionalPage} />
               <Route path="/SeasonalPage" component={SeasonalPage} />
