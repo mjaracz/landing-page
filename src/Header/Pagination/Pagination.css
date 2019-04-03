@@ -1,0 +1,29 @@
+.header__pageNumber {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    margin: 45px auto;
+    z-index: 100;
+}
+
+.pageNumber__arrow {
+    color: #787878;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pageNumber__item {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    margin: 5px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.pageNumber__item:hover {
+    box-shadow: 2px 2px 4px 0 #c9c9c9;
+}

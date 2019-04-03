@@ -1,0 +1,15 @@
+.header__banner {
+    display: block;
+    padding: 0;
+    margin-left: auto;
+    overflow: hidden;
+}
+@media screen and (max-width: 1265px) {
+    .header__banner {
+        display: none;
+    }
+}
+
+.header__container {
+    display: flex;
+}

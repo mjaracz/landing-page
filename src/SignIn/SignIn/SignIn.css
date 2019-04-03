@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.main__signIn {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: auto;
+    height: 300px;
+    background-color: #ffffff;
+
+}
+.main__signIn > div > input {
+    width: 120px;
+}
+

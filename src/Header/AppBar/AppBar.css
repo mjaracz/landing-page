@@ -1,0 +1,104 @@
+.header__appbar {
+    width: 100vw;
+    height: 72px;
+    display: flex;
+    background-color: #2e2e2e;
+    transition: .6s;
+}
+    .header__appbar.--sticky {
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+.appbar__department {
+    display: flex;
+    margin: auto 72px auto 72px;
+}
+    .appbar__department > div > button > span {
+        color: #ffffff;
+    }
+.appbar__department > li {
+    width: 72px;
+    height: 32px;
+    margin: 17px 15px 0 15px;
+    list-style: none;
+}
+.department--mobile {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media (max-width: 1265px) {
+    .MuiPaper-root-23 {
+        position: fixed !important;
+        top: 70px !important;
+    }
+}
+
+
+@media (max-width: 1265px) {
+    .appbar__department > li {
+        display: none;
+    }
+    .department--mobile {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+.appbar__department > li > a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    transition: .3s;
+}
+.appbar__department > li > a:hover {
+    color: #6f6f6f;
+}
+
+.appbar__title {
+    width: 176px;
+    height: 29px;
+    margin: 23px 10px 20px 31px;
+}
+
+.appbar__title > a {
+    text-decoration: none;
+    color: #f62f5e;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    line-height: normal;
+}
+.appbar__icons {
+    margin: auto 80px auto auto;
+    display: flex;
+    border-radius: 50px !important;
+}
+
+@media (max-width: 1265px) {
+    .appbar__icons {
+        display: none;
+    }
+    .appbar__title {
+        margin: 23px 10px 20px 17px;
+    }
+}
+
+.icon__element {
+    margin: auto;
+}
+
+.shop__element {
+    color: #6f6f6f;
+}
+
+.long__menu {
+    top: 120px;
+}

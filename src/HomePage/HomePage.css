@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44px;
+}
+
+@media (max-width: 1265px) {
+    main {
+        margin-top: 130px;
+    }
+}
