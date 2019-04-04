@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import AppBarComponent from './AppBarComponent';
 
 
-
 type State = {
   sticky: boolean
 }

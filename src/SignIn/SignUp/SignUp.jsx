@@ -3,7 +3,7 @@ import * as React from 'react';
 import './SignUp.css';
 
 import { bindActionCreators } from 'redux';
-import { paramsProductsActions } from '../../redux/actions/paramsProductsActions';
+import { postRegistrations } from '../../redux/actions/postRegistrations';
 import { connect } from 'react-redux';
 import { TextFields } from '../TextFields';
 import ButtonItem from "../ButtonItem";
@@ -27,6 +27,11 @@ class SignUp extends React.Component<null, State> {
       password: '',
       TextField: [
         {
+          name: 'name',
+          type: 'name',
+          autoComplete: 'current-name'
+        },
+        {
           name: 'email',
           type: 'email',
           autoComplete: 'current-email'
@@ -45,14 +50,16 @@ class SignUp extends React.Component<null, State> {
     }
   }
   componentDidMount() {
-    this.props.paramsProductsActions('?page=1&limit=10')
+
   };
   onChangeField = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   };
-
+  onClick = () => {
+    this.props.postRegistrations()
+  };
   render() {
     const { TextField } = this.state;
     const signInField = TextField.map(item => {
@@ -65,7 +72,10 @@ class SignUp extends React.Component<null, State> {
       <main>
         <div className='main__signUp'>
           { signInField }
-          <ButtonItem value='Join us!'/>
+          <ButtonItem
+            onClick={}
+            value='Join us!'
+          />
         </div>
       </main>
     )
@@ -80,7 +90,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    paramsProductsActions
+    postRegistrations
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

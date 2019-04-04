@@ -1,5 +1,5 @@
 //@flow
-import { FETCHED_ACTION, FETCH_ACTION, ERROR_ACTION} from "../actions/paramsProductsActions";
+import {FETCH_ERROR, FETCH_PRODUCTS, GET_PRODUCTS} from "../actions/getProducts";
 
 export interface Product {
   product_id: number,
@@ -12,35 +12,39 @@ export interface Product {
 }
 
 interface urlParamStore {
-  paramData: Product[],
+  data: Product[],
   isLoading: boolean,
+  params: string,
   error: Object
 }
 
 const InitialState = {
   isLoading: false,
-  paramData: [],
+  products: [],
+  params: '',
   error: {}
 };
 
 const getParamsProducts = (state: urlParamStore = InitialState, action) => {
   switch(action.type) {
-    case FETCH_ACTION: {
-      return Object.assign({}, state, {
+    case GET_PRODUCTS: {
+      return ({
         ...state,
-        isLoading: true
+        isLoading: true,
+        params: action.payload
       })
     }
-    case FETCHED_ACTION: {
-      return Object.assign({}, state, {
+    case FETCH_PRODUCTS: {
+      return ({
         ...state,
         isLoading: false,
-        paramData: action.payload
+        products: action.payload
       })
     }
-    case ERROR_ACTION: {
-      return Object.assign({}, state, {
+    case FETCH_ERROR: {
+      return ({
         ...state,
+        isLoading: false,
         error: action.payload
       })
     }

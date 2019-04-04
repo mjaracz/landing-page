@@ -5,11 +5,11 @@ import store from './redux/store';
 
 import Header from './Header/Header';
 import HomePage from './HomePage/HomePage';
-import NaturalPage from './NaturalPage/NaturalPage';
-import RegionalPage from './RegionalPage/RegionalPage';
-import SeasonalPage from './SeasonalPage/SeasonalPage';
-import SignIn from './SignIn/SignIn/SignIn';
-import SignUp from './SignIn/SignUp/SignUp';
+import NaturalPage from "./NaturalPage/NaturalPage";
+import RegionalPage from "./RegionalPage/RegionalPage";
+import SeasonalPage from "./SeasonalPage/SeasonalPage";
+import SignIn from "./SignIn/SignIn/SignIn";
+import SignUp from "./SignIn/SignUp/SignUp";
 
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
           <div className="container">
             <Header/>
             <Switch>
-              <Route path="/turing-rec" component={HomePage} />
+              <Route exact path="/" component={HomePage} />
               <Route path="/NaturalPage" component={NaturalPage} />
               <Route path="/RegionalPage" component={RegionalPage} />
               <Route path="/SeasonalPage" component={SeasonalPage} />

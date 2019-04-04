@@ -4,22 +4,22 @@ import NaturalPageComponent from './NaturalPageComponent';
 
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {paramsProductsActions} from '../redux/actions/paramsProductsActions';
+import {getProducts} from '../redux/actions/getProducts';
+import {getCategories} from "../redux/actions/getCategories";
 import type {Product} from "../redux/reducers/getParamsProducts";
-import {paramsCategoriesActions} from "../redux/actions/paramsCategoriesActions";
 
 interface Props {
   error: Object,
   isLoading: boolean,
   products: Product[],
-  paramsProductsActions(): void,
-  paramsCategoriesActions(): void
+  getProducts(): void,
+  getCategories(): void
 }
 
 class NaturalPage extends Component<Props> {
   componentDidMount() {
-    this.props.paramsProductsActions('inDepartment/2/?page=1&limit=10');
-    this.props.paramsCategoriesActions('/2');
+    this.props.getProducts('inDepartment/2/?page=1&limit=10');
+    this.props.getCategories('/2');
   }
   render() {
     const {
@@ -43,8 +43,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
-    paramsProductsActions,
-    paramsCategoriesActions
+    getCategories,
+    getProducts
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(NaturalPage);

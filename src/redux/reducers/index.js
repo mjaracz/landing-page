@@ -4,7 +4,7 @@ import getParamsCategories from "./getParamsCategories";
 
 const rootReducer = combineReducers({
   products: getParamsProducts,
-  category: getParamsCategories
+  categories: getParamsCategories
 });
 
 export default rootReducer;

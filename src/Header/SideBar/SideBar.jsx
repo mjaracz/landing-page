@@ -5,13 +5,13 @@ import Item from '../../redux/reducers/getParamsCategories';
 import './SideBar.css';
 
 import { connect } from 'react-redux';
-import { paramsProductsActions } from '../../redux/actions/paramsProductsActions';
+import { getProducts } from '../../redux/actions/getProducts';
 import { bindActionCreators } from 'redux';
 
 type Props = {
   liItems: Item[],
   isLoading: boolean,
-  paramsProductsActions(): void
+  getProducts(): void
 }
 
 class SideBar extends React.Component<Props> {
@@ -24,39 +24,39 @@ class SideBar extends React.Component<Props> {
   }
   onClickCategory = e => {
     e.preventDefault();
-    const { paramsProductsActions } = this.props;
+    const { getProducts } = this.props;
     switch (e.target.classList.value) {
       case 'French': {
         const params = `inCategory/1`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Irish': {
         const params = `inCategory/3`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Italian': {
         const params = `inCategory/2`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Animal': {
         const params = `inCategory/4`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Flower': {
         const params = `inCategory/5`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Christmas': {
         const params = `inCategory/6`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       case 'Valentine\'s': {
         const params = `inCategory/7`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
       default: {
         const params = `inCategory/1`;
-        return paramsProductsActions(params)
+        return getProducts(params)
       }
     }
   };
@@ -72,7 +72,7 @@ class SideBar extends React.Component<Props> {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    paramsProductsActions
+    getProducts
   }, dispatch);
 
 export default connect(null, mapDispatchToProps)(SideBar);

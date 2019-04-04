@@ -6,8 +6,8 @@ import Pagination from './Pagination/Pagination';
 
 import { connect  }from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { paramsProductsActions } from '../redux/actions/paramsProductsActions';
-import { paramsCategoriesActions } from '../redux/actions/paramsCategoriesActions';
+import { getProducts } from '../redux/actions/getProducts';
+import { getCategories } from "../redux/actions/getCategories";
 import  SideBarContainer  from './SideBar/SideBar';
 
 import Item from '../redux/reducers/getParamsCategories';
@@ -16,8 +16,7 @@ type Props = {
   sidebar: Item[],
   isLoading: boolean,
   errorMessage: string,
-  paramsProductsActions(): void,
-  paramsCategoriesActions(): void
+  getProducts(): void
 }
 
 type State = {
@@ -44,16 +43,20 @@ class Header extends Component<Props, State> {
       : {signInClick: false};
     return state
   };
+  componentDidMount() {
+    this.props.getCategories()
+
+  }
   onClickArrow = (arrowDirection) => {
     const { pageNumber } = this.state;
-    const { paramsProductsActions } = this.props;
+    const { getProducts } = this.props;
     let newPage;
 
     const noTooBig = (pageNumber > 0 && pageNumber <= 3);
     if(noTooBig) {
-
       const params = `?page=${pageNumber}&limit=10`;
-      paramsProductsActions(params);
+      console.log(params);
+      getProducts(params);
     }
     if(arrowDirection) {
       newPage = pageNumber + 1;
@@ -67,26 +70,17 @@ class Header extends Component<Props, State> {
   };
   onClickNumber = (nr) => {
     const { pageNumber } = this.state;
-    const { paramsProductsActions } = this.props;
+    const { getProducts } = this.props;
     this.setState({pageNumber: nr});
     const params = `?page=${pageNumber}&limit=10`;
-    paramsProductsActions(params);
+    getProducts(params);
   };
   onClickSignIn = () => {
     this.setState({ signInClick: true })
   };
   render() {
-    const {
-      paramsCategoriesActions,
-      categories,
-      isLoading
-    } = this.props;
     const { signInClick } = this.state;
-
-
-    if(categories.length === 0) {
-      paramsCategoriesActions('/1')
-    }
+    const { categories, isLoading } = this.props;
     return(
       <header className='header'>
         <SignInBar onClickSignIn={this.onClickSignIn}/>
@@ -110,23 +104,20 @@ class Header extends Component<Props, State> {
               />
             : null
         }
-
       </header>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  products: state.products.paramData,
-  isLoading: state.category.isLoading,
-  categories: state.category.rows,
-  error: state.category.error
+const mapStateToProps = state => ({
+  categories: state.categories.rows,
+  isLoading: state.categories.isLoading
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    paramsCategoriesActions,
-    paramsProductsActions
+    getProducts,
+    getCategories
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

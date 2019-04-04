@@ -4,22 +4,22 @@ import SeasonalPageComponent from './SeasonalPageComponent';
 
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {paramsProductsActions} from '../redux/actions/paramsProductsActions';
-import {paramsCategoriesActions} from '../redux/actions/paramsCategoriesActions';
+import {getProducts} from '../redux/actions/getProducts';
+import {getCategories} from '../redux/actions/getCategories';
 import type {Product} from "../redux/reducers/getParamsProducts";
 
 interface Props {
   error: Object,
   products: Product[],
   isLoading: boolean,
-  paramsProductsActions(): void,
-  paramsCategoriesActions(): void
+  getProducts(): void,
+  getCategories(): void
 }
 
 class SeasonalPage extends Component<Props> {
   componentDidMount() {
-    this.props.paramsProductsActions('inDepartment/3/?page=1$limit=10');
-    this.props.paramsCategoriesActions('/3');
+    this.props.getProducts('inDepartment/3/?page=1$limit=10');
+    this.props.getCategories('/3');
   }
   render() {
     const {
@@ -43,8 +43,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
-    paramsProductsActions,
-    paramsCategoriesActions
+    getProducts,
+    getCategories
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SeasonalPage);

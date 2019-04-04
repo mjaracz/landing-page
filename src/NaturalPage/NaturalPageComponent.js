@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@material-ui/core/CircularProgress/index";
 import CardItem from "../HomePage/CardItem/CardItem";
 import type {Product} from "../redux/reducers/getParamsProducts";
 

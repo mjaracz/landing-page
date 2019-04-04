@@ -5,13 +5,15 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import './HomePage.css';
 
 import { bindActionCreators } from 'redux';
-import { paramsProductsActions } from '../redux/actions/paramsProductsActions';
+import { getProducts } from '../redux/actions/getProducts';
+import { getCategories } from "../redux/actions/getCategories";
 import { Product } from '../redux/reducers/getParamsProducts';
 import { connect } from 'react-redux';
 
 
 type Props = {
-  paramsProductsActions(): void,
+  getProducts(): void,
+  getCategories(): void,
   products: Product[],
   isLoading: boolean,
   error: Object
@@ -19,7 +21,8 @@ type Props = {
 
 class HomePage extends React.Component<Props> {
   componentDidMount() {
-    this.props.paramsProductsActions('?page=1&limit=10')
+    this.props.getProducts('?page=1&limit=10');
+    this.props.getCategories('/1')
   };
 
   render() {
@@ -52,7 +55,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    paramsProductsActions
+    getProducts,
+    getCategories
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
