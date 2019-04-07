@@ -7,7 +7,7 @@ interface Props {
   onClick(): void
 }
 
-const SiginInComponent = (props: Props) => {
+const SigInComponent = (props: Props) => {
   const {field, onClick, onChange} = props;
   const SignInField = field.map((item, index) => {
     return(
@@ -31,4 +31,4 @@ const SiginInComponent = (props: Props) => {
   )
 };
 
-export default SiginInComponent;
+export default SigInComponent;
