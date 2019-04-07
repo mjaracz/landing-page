@@ -5,7 +5,6 @@ export const post = (url, data) =>
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Origin': 'maximum.blog'
+      'Access-Control-Allow-Origin': '*'
     },
   }).then(res => res.json());

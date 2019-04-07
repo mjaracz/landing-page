@@ -30,7 +30,6 @@ class HomePage extends React.Component<Props> {
       isLoading,
       products,
     } = this.props;
-    console.log(products, isLoading);
     const  items = (products.length !== 0) ? products.map((product: Product, index: number) => {
       const imgSrc = `https://backendapi.turing.com/images/products/${product.thumbnail}`;
       return <CardItem

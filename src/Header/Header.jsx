@@ -54,7 +54,6 @@ class Header extends Component<Props, State> {
     const noTooBig = (pageNumber > 0 && pageNumber <= 3);
     if(noTooBig) {
       const params = `?page=${pageNumber}&limit=10`;
-      console.log(params);
       getProducts(params);
     }
     if(arrowDirection) {
@@ -80,7 +79,6 @@ class Header extends Component<Props, State> {
   render() {
     const { signInClick } = this.state;
     const { categories, isLoading } = this.props;
-    console.log(categories, isLoading);
     return(
       <header className='header'>
         <SignInBar onClickSignIn={this.onClickSignIn}/>

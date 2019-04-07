@@ -66,7 +66,6 @@ class SignUp extends React.Component<null, State> {
   };
   render() {
     const { textField } = this.state;
-    console.log(this.props.user);
     return <SignUpComponent
       field={textField}
       onClick={this.onClick}
