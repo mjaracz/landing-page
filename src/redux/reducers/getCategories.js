@@ -1,5 +1,5 @@
 //@ flow
-import {GET_CATEGORIES, CATEGORIES_FETCH, CATEGORIES_ERROR} from '../actions/getCategories';
+import { GET_CATEGORIES, CATEGORIES_FETCH, CATEGORIES_ERROR } from '../actions/getCategories';
 
 export interface Item  {
   category_id: number,
@@ -18,7 +18,7 @@ const InitialStore = {
   isLoading: false
 };
 
-const getParamsCategories = (state: CategoriesStore = InitialStore, action) => {
+const getCategories = (state: CategoriesStore = InitialStore, action) => {
   switch (action.type) {
     case GET_CATEGORIES: {
       return ({
@@ -27,7 +27,6 @@ const getParamsCategories = (state: CategoriesStore = InitialStore, action) => {
         params: action.payload
       })
     }
-
     case CATEGORIES_FETCH: {
       return ({
         ...state,
@@ -48,4 +47,4 @@ const getParamsCategories = (state: CategoriesStore = InitialStore, action) => {
   }
 };
 
-export default getParamsCategories;
+export default getCategories;

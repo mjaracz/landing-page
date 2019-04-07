@@ -1,13 +1,11 @@
-import { CATEGORIES_FETCH, GET_CATEGORIES, CATEGORIES_ERROR } from "../actions/getCategories";
-import { put, call, takeEvery} from 'redux-saga/effects';
-import { api } from '../api'
-
-
+import {CATEGORIES_FETCH, GET_CATEGORIES, CATEGORIES_ERROR} from "../actions/getCategories";
+import {put, call, takeEvery} from 'redux-saga/effects';
+import {get} from '../api/get';
 
 export function* getCategory(action) {
   const url = `https://backendapi.turing.com/categories/inDepartment${action.payload}`;
   try {
-    const category = yield call(api, url.toString());
+    const category = yield call(get, url.toString());
     yield put({type: CATEGORIES_FETCH, payload: category})
   }
   catch (e) {

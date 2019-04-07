@@ -10,7 +10,7 @@ import { getProducts } from '../redux/actions/getProducts';
 import { getCategories } from "../redux/actions/getCategories";
 import  SideBarContainer  from './SideBar/SideBar';
 
-import Item from '../redux/reducers/getParamsCategories';
+import Item from '../redux/reducers/getCategories';
 
 type Props = {
   sidebar: Item[],
@@ -44,8 +44,7 @@ class Header extends Component<Props, State> {
     return state
   };
   componentDidMount() {
-    this.props.getCategories()
-
+    this.props.getCategories('/1');
   }
   onClickArrow = (arrowDirection) => {
     const { pageNumber } = this.state;
@@ -81,6 +80,7 @@ class Header extends Component<Props, State> {
   render() {
     const { signInClick } = this.state;
     const { categories, isLoading } = this.props;
+    console.log(categories, isLoading);
     return(
       <header className='header'>
         <SignInBar onClickSignIn={this.onClickSignIn}/>

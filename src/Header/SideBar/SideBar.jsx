@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import SideBarComponent from './SideBarComponent';
-import Item from '../../redux/reducers/getParamsCategories';
+import Item from '../../redux/reducers/getCategories';
 import './SideBar.css';
 
 import { connect } from 'react-redux';

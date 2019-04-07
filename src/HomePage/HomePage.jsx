@@ -7,7 +7,7 @@ import './HomePage.css';
 import { bindActionCreators } from 'redux';
 import { getProducts } from '../redux/actions/getProducts';
 import { getCategories } from "../redux/actions/getCategories";
-import { Product } from '../redux/reducers/getParamsProducts';
+import { Product } from '../redux/reducers/getProducts';
 import { connect } from 'react-redux';
 
 
@@ -22,7 +22,7 @@ type Props = {
 class HomePage extends React.Component<Props> {
   componentDidMount() {
     this.props.getProducts('?page=1&limit=10');
-    this.props.getCategories('/1')
+    this.props.getCategories('/1');
   };
 
   render() {
@@ -30,6 +30,7 @@ class HomePage extends React.Component<Props> {
       isLoading,
       products,
     } = this.props;
+    console.log(products, isLoading);
     const  items = (products.length !== 0) ? products.map((product: Product, index: number) => {
       const imgSrc = `https://backendapi.turing.com/images/products/${product.thumbnail}`;
       return <CardItem
@@ -37,26 +38,28 @@ class HomePage extends React.Component<Props> {
         image={imgSrc}
         key={index}
       />
-    })
-    : null;
-    return(
-      <main>
-        { (isLoading) ? <CircularProgress style={{color: '#f62f5e', margin: 150}} size={90} /> : items }
-      </main>
-    )
+    }) : null;
+
+    return <main>
+      {
+        (isLoading)
+          ? <CircularProgress style={{color: '#f62f5e', margin: 150}} size={90} />
+          : items
+      }
+    </main>
   }
 }
 
 const mapStateToProps = (state) => ({
   isLoading: state.products.isLoading,
-  products: state.products.paramData,
+  products: state.products.products,
   error: state.products.error
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    getProducts,
-    getCategories
+    getCategories,
+    getProducts
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

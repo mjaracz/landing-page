@@ -3,15 +3,15 @@ import * as React from 'react';
 import './SignUp.css';
 
 import { bindActionCreators } from 'redux';
-import { postRegistrations } from '../../redux/actions/postRegistrations';
+import { registrationsUser } from '../../redux/actions/registrationsUser';
 import { connect } from 'react-redux';
-import { TextFields } from '../TextFields';
-import ButtonItem from "../ButtonItem";
+import { SignUpComponent } from "./SignUpComponent";
 
 interface State {
+  name: string,
   email: string,
   password: string,
-  TextField: {
+  textField: {
     name: string,
     type: string,
     autoComplete: string
@@ -23,9 +23,10 @@ class SignUp extends React.Component<null, State> {
     super(props);
 
     this.state = {
+      name: '',
       email: '',
       password: '',
-      TextField: [
+      textField: [
         {
           name: 'name',
           type: 'name',
@@ -49,48 +50,40 @@ class SignUp extends React.Component<null, State> {
       ]
     }
   }
-  componentDidMount() {
-
-  };
   onChangeField = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   };
   onClick = () => {
-    this.props.postRegistrations()
+    const credentials = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    };
+    debugger;
+    this.props.registrationsUser(credentials)
   };
   render() {
-    const { TextField } = this.state;
-    const signInField = TextField.map(item => {
-      return <TextFields
-        TextField={item}
-        onChange={this.onChangeField}
-      />
-    });
-    return(
-      <main>
-        <div className='main__signUp'>
-          { signInField }
-          <ButtonItem
-            onClick={}
-            value='Join us!'
-          />
-        </div>
-      </main>
-    )
+    const { textField } = this.state;
+    console.log(this.props.user);
+    return <SignUpComponent
+      field={textField}
+      onClick={this.onClick}
+      onChange={this.onChangeField}
+    />
   }
 }
 
 const mapStateToProps = (state) => ({
-  isLoading: state.products.isLoading,
-  products: state.products.paramData,
-  error: state.products.error
+  user: state.user.registrations,
+  isLoading: state.user.loadingSignUp,
+  error: state.user.error
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    postRegistrations
+    registrationsUser
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

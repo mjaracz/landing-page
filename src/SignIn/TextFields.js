@@ -21,7 +21,6 @@ export const TextFields = (props: Props) => {
       autoComplete={props.TextField.autoComplete}
       variant="outlined"
       margin="normal"
-      reguired={true}
     />
   )
 };

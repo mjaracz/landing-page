@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import CircularProgress from "@material-ui/core/CircularProgress/index";
-import Item from '../../redux/reducers/getParamsCategories';
+import Item from '../../redux/reducers/getCategories';
 
 
 type Props = {

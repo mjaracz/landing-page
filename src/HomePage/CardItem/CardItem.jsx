@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react';
-import type { Product } from "../../redux/reducers/getParamsProducts";
+import type { Product } from "../../redux/reducers/getProducts";
 import CardItemComponent from "./CardItemComponent";
 
 export type Props = {

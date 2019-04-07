@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {getProducts} from '../redux/actions/getProducts';
 import {getCategories} from '../redux/actions/getCategories';
-import type {Product} from "../redux/reducers/getParamsProducts";
+import type {Product} from "../redux/reducers/getProducts";
 
 interface Props {
   error: Object,
@@ -37,7 +37,7 @@ class SeasonalPage extends Component<Props> {
 
 const mapStateToProps = (state) => ({
   isLoading: state.products.isLoading,
-  products: state.products.paramData,
+  products: state.products.products,
   error: state.products.error
 });
 

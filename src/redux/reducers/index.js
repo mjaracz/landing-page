@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import getParamsProducts from "./getParamsProducts";
-import getParamsCategories from "./getParamsCategories";
+import getProducts from "./getProducts";
+import getCategories from "./getCategories";
+import postUser from "./postUser"
 
 const rootReducer = combineReducers({
-  products: getParamsProducts,
-  categories: getParamsCategories
+  products: getProducts,
+  categories: getCategories,
+  user: postUser
 });
 
 export default rootReducer;

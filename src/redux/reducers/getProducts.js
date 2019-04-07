@@ -12,20 +12,20 @@ export interface Product {
 }
 
 interface urlParamStore {
-  data: Product[],
   isLoading: boolean,
+  products: Product[],
   params: string,
   error: Object
 }
 
 const InitialState = {
-  isLoading: false,
+  isLoading: true,
   products: [],
   params: '',
   error: {}
 };
 
-const getParamsProducts = (state: urlParamStore = InitialState, action) => {
+const getProducts = (state: urlParamStore = InitialState, action) => {
   switch(action.type) {
     case GET_PRODUCTS: {
       return ({
@@ -54,4 +54,4 @@ const getParamsProducts = (state: urlParamStore = InitialState, action) => {
   }
 };
 
-export default getParamsProducts;
+export default getProducts;

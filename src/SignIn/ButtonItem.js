@@ -3,7 +3,8 @@ import Button from '@material-ui/core/Button/index';
 import './ButtonItem.css'
 
 type Props = {
-  value: string
+  value: string,
+  onClick(): void
 }
 
 const ButtonItem = (props: Props) => {
@@ -12,6 +13,7 @@ const ButtonItem = (props: Props) => {
       color='secondary'
       variant='contained'
       className='main__button'
+      onClick={props.onClick}
     >
       { props.value }
     </Button>
