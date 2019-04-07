@@ -1,7 +1,5 @@
 // @flow
 import * as React from 'react';
-import CardItem from './CardItem/CardItem';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import './HomePage.css';
 
 import { bindActionCreators } from 'redux';
@@ -9,6 +7,7 @@ import { getProducts } from '../redux/actions/getProducts';
 import { getCategories } from "../redux/actions/getCategories";
 import { Product } from '../redux/reducers/getProducts';
 import { connect } from 'react-redux';
+import HomePageComponent from "./HomePageComponent";
 
 
 type Props = {
@@ -30,22 +29,10 @@ class HomePage extends React.Component<Props> {
       isLoading,
       products,
     } = this.props;
-    const  items = (products.length !== 0) ? products.map((product: Product, index: number) => {
-      const imgSrc = `https://backendapi.turing.com/images/products/${product.thumbnail}`;
-      return <CardItem
-        product={product}
-        image={imgSrc}
-        key={index}
-      />
-    }) : null;
-
-    return <main>
-      {
-        (isLoading)
-          ? <CircularProgress style={{color: '#f62f5e', margin: 150}} size={90} />
-          : items
-      }
-    </main>
+    return <HomePageComponent
+      products={products}
+      isLoading={isLoading}
+    />
   }
 }
 

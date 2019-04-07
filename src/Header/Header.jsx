@@ -4,10 +4,10 @@ import AppBar from './AppBar/AppBar';
 import SignInBar from './SignInBar/SignInBar';
 import Pagination from './Pagination/Pagination';
 
-import { connect  }from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getProducts } from '../redux/actions/getProducts';
-import { getCategories } from "../redux/actions/getCategories";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {getProducts} from '../redux/actions/getProducts';
+import {getCategories} from "../redux/actions/getCategories";
 import  SideBarContainer  from './SideBar/SideBar';
 
 import Item from '../redux/reducers/getCategories';

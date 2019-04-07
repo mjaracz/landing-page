@@ -6,5 +6,3 @@ export const fetchLogin = (body) => ({
   type: FETCH_LOGIN,
   payload: body
 });
-
-

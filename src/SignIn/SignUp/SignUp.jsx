@@ -2,10 +2,10 @@
 import * as React from 'react';
 import './SignUp.css';
 
-import { bindActionCreators } from 'redux';
-import { registrationsUser } from '../../redux/actions/registrationsUser';
-import { connect } from 'react-redux';
-import { SignUpComponent } from "./SignUpComponent";
+import {bindActionCreators} from 'redux';
+import {registrationsUser} from '../../redux/actions/registrationsUser';
+import {connect} from 'react-redux';
+import {SignUpComponent} from "./SignUpComponent";
 
 interface State {
   name: string,
