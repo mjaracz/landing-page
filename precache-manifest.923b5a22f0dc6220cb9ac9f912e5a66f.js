@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/turing-rec/static/js/runtime~main.f93e0b23.js"
   },
   {
-    "revision": "787bc25755d0cb2fb2d9",
-    "url": "/turing-rec/static/js/main.b0890320.chunk.js"
+    "revision": "4e13af8d8e0aa857af0d",
+    "url": "/turing-rec/static/js/main.10146110.chunk.js"
   },
   {
     "revision": "750985a5b6faed12b88b",
     "url": "/turing-rec/static/js/2.7be81526.chunk.js"
   },
   {
-    "revision": "787bc25755d0cb2fb2d9",
+    "revision": "4e13af8d8e0aa857af0d",
     "url": "/turing-rec/static/css/main.6afaba8c.chunk.css"
   },
   {
-    "revision": "21071288df5dbf8e3949325ca4aae526",
+    "revision": "fd879cc62f16ca60e2806136c1621da2",
     "url": "/turing-rec/index.html"
   }
 ];
