@@ -1,13 +1,13 @@
 {
-  "main.css": "/turing-rec/static/css/main.3aa5812c.chunk.css",
-  "main.js": "/turing-rec/static/js/main.3016458c.chunk.js",
-  "main.js.map": "/turing-rec/static/js/main.3016458c.chunk.js.map",
+  "main.css": "/turing-rec/static/css/main.6afaba8c.chunk.css",
+  "main.js": "/turing-rec/static/js/main.b2001d6b.chunk.js",
+  "main.js.map": "/turing-rec/static/js/main.b2001d6b.chunk.js.map",
   "runtime~main.js": "/turing-rec/static/js/runtime~main.f93e0b23.js",
   "runtime~main.js.map": "/turing-rec/static/js/runtime~main.f93e0b23.js.map",
-  "static/js/2.06c7e6b8.chunk.js": "/turing-rec/static/js/2.06c7e6b8.chunk.js",
-  "static/js/2.06c7e6b8.chunk.js.map": "/turing-rec/static/js/2.06c7e6b8.chunk.js.map",
+  "static/js/2.7be81526.chunk.js": "/turing-rec/static/js/2.7be81526.chunk.js",
+  "static/js/2.7be81526.chunk.js.map": "/turing-rec/static/js/2.7be81526.chunk.js.map",
   "index.html": "/turing-rec/index.html",
-  "precache-manifest.a10c5e06f728576f9765df3559bb4c19.js": "/turing-rec/precache-manifest.a10c5e06f728576f9765df3559bb4c19.js",
+  "precache-manifest.7b15968cff911a7bd9de6af1b1f73bee.js": "/turing-rec/precache-manifest.7b15968cff911a7bd9de6af1b1f73bee.js",
   "service-worker.js": "/turing-rec/service-worker.js",
-  "static/css/main.3aa5812c.chunk.css.map": "/turing-rec/static/css/main.3aa5812c.chunk.css.map"
+  "static/css/main.6afaba8c.chunk.css.map": "/turing-rec/static/css/main.6afaba8c.chunk.css.map"
 }
