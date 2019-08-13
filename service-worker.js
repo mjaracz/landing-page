@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/turing-rec/precache-manifest.92da0ca80e2f875a7ad66b234214a8f2.js"
+  "/landing-page/precache-manifest.c5e7e3edc744d6a92a5d320f84c3bf3b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/turing-rec/index.html", {
+workbox.routing.registerNavigationRoute("/landing-page/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
